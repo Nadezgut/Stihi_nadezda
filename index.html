@@ -109,7 +109,8 @@
                text-decoration: underline;
                background: rgba(255, 223, 186, 0.8);
            }
-    .links a.depresnyak {
+   .links a.depresnyak {
+    position: relative;
     background: linear-gradient(135deg, #444, #222);
     color: #f2f2f2;
     font-size: 22px;
@@ -121,6 +122,38 @@
     text-align: center;
     transition: all 0.3s ease;
     display: inline-block;
+    overflow: hidden;
+}
+.links a.depresnyak::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0;
+    animation: starsMove 6s linear infinite;
+}
+
+@keyframes starsMove {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(20px, 20px);
+        opacity: 0.2;
+    }
+}
+
+.links a.depresnyak:hover {
+    background: linear-gradient(135deg, #555, #333);
+    transform: scale(1.05);
 }
 
 .links a.depresnyak:hover {
