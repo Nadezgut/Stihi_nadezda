@@ -3,14 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <title>Депресняк</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #111, #000);
+            color: #e6e6e6;
+            font-family: 'EB Garamond', serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .stars::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 
+                20px 30px white,
+                40px 70px white,
+                80px 120px white,
+                120px 50px white,
+                200px 150px white,
+                300px 80px white,
+                500px 200px white,
+                700px 100px white;
+            animation: twinkle 4s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            animation: fadeIn 2s ease;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .enter {
+            background: #444;
+            color: #fff;
+        }
+
+        .enter:hover {
+            background: #666;
+        }
+
+        .back {
+            background: transparent;
+            border: 1px solid #666;
+            color: #ccc;
+        }
+
+        .back:hover {
+            background: #222;
+        }
+
+        #content {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Депресняк</h1>
+<div class="stars"></div>
 
-<p>
-Тут будут твои стихи<br>
-</p>
+<div class="container">
+    <h1 class="glow">Депресняк</h1>
+    <p>ты точно хочешь сюда зайти?</p>
+
+    <div class="buttons">
+        <a href="index.html" class="back">← назад</a>
+        <a href="#" class="enter" onclick="showContent()">да</a>
+    </div>
+
+    <div id="content">
+        <p>
+            здесь начинается тишина...<br>
+            и строки, которые ты оставила<br>
+            для себя 🌑
+        </p>
+    </div>
+</div>
+
+<audio id="bgmusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_9c2c3f6b6e.mp3?filename=ambient-piano-ambient-12130.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showContent() {
+    document.getElementById("content").style.display = "block";
+}
+
+document.addEventListener("click", function() {
+    document.getElementById("bgmusic").play();
+}, { once: true });
+</script>
 
 </body>
 </html>
