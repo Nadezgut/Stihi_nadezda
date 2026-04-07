@@ -152,12 +152,17 @@ function goDepress() {
     const text = document.getElementById("content");
     const music = document.getElementById("bgmusic");
 
-    // показать текст
     text.style.display = "block";
 
-    // запустить музыку
     music.currentTime = 0;
-    music.play();
+
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            console.log("Автовоспроизведение заблокировано браузером");
+        });
+    }
 }
 </script>
 
