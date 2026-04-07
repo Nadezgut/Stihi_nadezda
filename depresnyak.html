@@ -148,13 +148,21 @@
 </audio>
 
 <script>
-function showContent() {
-    document.getElementById("content").style.display = "block";
-}
+function goDepress() {
+    const text = document.getElementById("content");
+    const music = document.getElementById("bgmusic");
 
-document.addEventListener("click", function() {
-    document.getElementById("bgmusic").play();
-}, { once: true });
+    // показать "я предупреждала..."
+    text.style.display = "block";
+
+    // запустить музыку
+    music.play();
+
+    // переход через 2.5 секунды
+    setTimeout(() => {
+        window.location.href = "depress-poems.html";
+    }, 2500);
+}
 </script>
 
 </body>
