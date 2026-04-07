@@ -194,7 +194,13 @@ background-size: cover;
 <script>
 function startMusic() {
     const music = document.getElementById("bgmusic");
-    music.play();
+    music.currentTime = 0;
+
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+    }
 }
 </script>
 
