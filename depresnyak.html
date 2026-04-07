@@ -148,7 +148,9 @@
 </audio>
 
 <script>
-function goDepress() {
+function goDepress(event) {
+    event.preventDefault();
+
     const text = document.getElementById("content");
     const music = document.getElementById("bgmusic");
 
@@ -158,11 +160,6 @@ function goDepress() {
     // запустить музыку
     music.currentTime = 0;
     music.play();
-
-    // переход
-    setTimeout(() => {
-        window.location.href = "depress-poems.html";
-    }, 2500);
 }
 </script>
 
