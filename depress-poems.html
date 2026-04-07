@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Депресняк — стихи</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    font-family: 'EB Garamond', serif;
+}
+
+/* Блок со стихом */
+.poem-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Текст */
+.poem {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    color: white;
+    font-size: 22px;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+/* Черный промежуток */
+.gap {
+    height: 120px;
+    background: black;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 🎧 музыка -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🌑 СТИХ 1 -->
+<section class="poem-section" style="background-image: url('img1.jpg');">
+    <div class="poem">
+        <p>
+        здесь будет твой первый стих…<br>
+        можешь писать строками<br>
+        как тебе нравится
+        </p>
+    </div>
+</section>
+
+<div class="gap"></div>
+
+<!-- 🌑 СТИХ 2 -->
+<section class="poem-section" style="background-image: url('img2.jpg');">
+    <div class="poem">
+        <p>
+        второй стих…<br>
+        другой фон<br>
+        другое настроение
+        </p>
+    </div>
+</section>
+
+<div class="gap"></div>
+
+</body>
+</html>
