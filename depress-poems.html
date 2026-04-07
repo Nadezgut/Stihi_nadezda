@@ -9,6 +9,11 @@ body {
     margin: 0;
     background: black;
     font-family: 'EB Garamond', serif;
+    scroll-snap-type: y mandatory;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Блок со стихом */
@@ -19,6 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
 }
 
 /* Текст */
