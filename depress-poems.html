@@ -44,8 +44,7 @@ html {
     z-index: 0;
 }
 
-/* Текст */
-
+/* Текст — один раз, общий для всех стихов */
 .poem {
     padding: 40px;
     max-width: 600px;
@@ -54,10 +53,11 @@ html {
     line-height: 1.8;
     color: black;
     background: transparent;
-}
 
-.poem {
-    transform: translateY(-40px);
+    position: relative;
+    z-index: 1;
+
+    transform: translateY(-60px);
 }
 
 /* Черный промежуток */
@@ -65,6 +65,8 @@ html {
     height: 120px;
     background: black;
 }
+
+/* Секция левого стиха */
 .left-poem {
     justify-content: flex-start !important;
     align-items: center;
@@ -74,11 +76,6 @@ html {
 .left-poem .poem {
     text-align: left;
     line-height: 1.8;
-}
-
-.poem {
-    position: relative;
-    z-index: 1;
 }
 </style>
 
