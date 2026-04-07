@@ -12,7 +12,6 @@ body {
     scroll-snap-type: y mandatory;
 
     opacity: 0;
-    animation: fadeIn 3s ease forwards;
 }
 
 html {
@@ -112,12 +111,10 @@ html {
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+
 <script>
-window.addEventListener('click', () => {
-    const music = document.getElementById('bg-music');
-    if (music.paused) {
-        music.play();
-    }
+window.addEventListener('load', () => {
+    document.body.style.animation = "fadeIn 3s ease forwards";
 });
 </script>
 
