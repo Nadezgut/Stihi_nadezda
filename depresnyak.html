@@ -155,7 +155,8 @@ function goDepress() {
     text.style.display = "block";
 
     music.currentTime = 0;
-    music.play();
+
+    music.play().catch(() => {});
 
     setTimeout(() => {
         window.location.href = "depress-poems.html";
