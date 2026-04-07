@@ -155,14 +155,11 @@ function goDepress() {
     text.style.display = "block";
 
     music.currentTime = 0;
+    music.play();
 
-    const playPromise = music.play();
-
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            console.log("Автовоспроизведение заблокировано браузером");
-        });
-    }
+    setTimeout(() => {
+        window.location.href = "depress-poems.html";
+    }, 1500);
 }
 </script>
 
