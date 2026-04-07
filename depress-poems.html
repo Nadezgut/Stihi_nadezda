@@ -71,9 +71,20 @@ html {
     padding-left: 60px;
 }
 
-.left-poem .poem {
-    text-align: left;
-    line-height: 1.8;
+.left-text {
+    transform: translateY(-60px);
+}
+
+.center-text {
+    transform: translateY(-40px);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.right-text {
+    transform: translateY(-60px);
+    text-align: right;
+    margin-left: auto;
 }
 </style>
 
@@ -97,7 +108,7 @@ window.addEventListener('click', () => {
 
 <!-- 🌑 СТИХ 1 (левый) -->
 <section class="poem-section left-poem" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
-    <div class="poem">
+    <div class="poem left-text big-poem">
         <p>
         Я очень люблю жить<br>
         И ненавижу жизнь<br>
