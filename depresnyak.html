@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -133,7 +133,7 @@
 
     <div class="buttons">
         <a href="index.html" class="back">← назад</a>
-        <a href="#" class="enter" onclick="goDepress()">да</a>
+        <button class="enter" onclick="goDepress()">да</button>
     </div>
 
     <div id="content">
@@ -143,8 +143,8 @@
     </div>
 </div>
 
-<audio id="bgmusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_9c2c3f6b6e.mp3?filename=ambient-piano-ambient-12130.mp3" type="audio/mpeg">
+<audio id="bgmusic">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -152,13 +152,14 @@ function goDepress() {
     const text = document.getElementById("content");
     const music = document.getElementById("bgmusic");
 
-    // показать "я предупреждала..."
+    // показать текст
     text.style.display = "block";
 
     // запустить музыку
+    music.currentTime = 0;
     music.play();
 
-    // переход через 2.5 секунды
+    // переход
     setTimeout(() => {
         window.location.href = "depress-poems.html";
     }, 2500);
