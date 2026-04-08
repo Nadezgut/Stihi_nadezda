@@ -73,32 +73,23 @@
             justify-content: center;
         }
 
-        a {
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            transition: 0.3s;
-            font-size: 18px;
-        }
+        .buttons a,
+.buttons button {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 18px;
+    background: transparent;
+    border: 1px solid #666;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .enter {
-            background: #444;
-            color: #fff;
-        }
-
-        .enter:hover {
-            background: #666;
-        }
-
-        .back {
-            background: transparent;
-            border: 1px solid #666;
-            color: #ccc;
-        }
-
-        .back:hover {
-            background: #222;
-        }
+.buttons a:hover,
+.buttons button:hover {
+    background: #222;
+}
 
         #content {
             display: none;
