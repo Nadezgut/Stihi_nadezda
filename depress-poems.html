@@ -12,12 +12,17 @@ body {
     color: white;
 }
 
-/* Секция стиха */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Блок стиха */
 .poem-section {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     padding: 60px;
     position: relative;
@@ -41,19 +46,9 @@ body {
     z-index: 1;
 }
 
-/* первый стих слева */
-.left {
-    justify-content: flex-start;
-}
-
-/* второй стих по центру */
-.center {
-    justify-content: center;
-}
-
-/* описание между стихами */
+/* описание */
 .description-wrapper {
-    padding: 120px 20px;
+    padding: 200px 20px;
     text-align: center;
 }
 
@@ -75,7 +70,7 @@ body {
 </audio>
 
 <!-- 🌑 СТИХ 1 -->
-<section class="poem-section left" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
+<section class="poem-section" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
     <div class="poem" style="color: black;">
         <p>
         Я очень люблю жить<br>
@@ -87,17 +82,8 @@ body {
     </div>
 </section>
 
-<!-- 🌑 ОПИСАНИЕ -->
-<div class="description-wrapper">
-    <div class="description-text">
-        этот стих описывает моё состояние точнее, чем я сама могу о нём сказать.
-        <br><br>
-        и… стих не мой, я очень хочу найти автора!👇
-    </div>
-</div>
-
 <!-- 🌑 СТИХ 2 -->
-<section class="poem-section center" style="background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp5772578.jpg?ssl=1');">
+<section class="poem-section" style="background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp5772578.jpg?ssl=1');">
     <div class="poem">
         <p>
         как я сделалась тем, от чего меня воротило<br>
@@ -117,6 +103,15 @@ body {
         </p>
     </div>
 </section>
+
+<!-- 🌑 ОПИСАНИЕ (под вторым стихом визуально) -->
+<div class="description-wrapper">
+    <div class="description-text">
+        этот стих описывает моё состояние точнее, чем я сама могу о нём сказать.
+        <br><br>
+        и… стих не мой, я очень хочу найти автора!👇
+    </div>
+</div>
 
 </body>
 </html>
