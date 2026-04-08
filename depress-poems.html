@@ -10,7 +10,6 @@ body {
     background: black;
     font-family: 'EB Garamond', serif;
     scroll-snap-type: y mandatory;
-
     opacity: 0;
 }
 
@@ -27,12 +26,12 @@ html {
     justify-content: flex-start;
     align-items: flex-start;
     padding-left: 60px;
-    padding-top: 60px; /* ← добавили отступ сверху вместо translate */
+    padding-top: 60px;
     position: relative;
     scroll-snap-align: start;
 }
 
-/* градиент поверх фона */
+/* градиент */
 .poem-section::before {
     content: "";
     position: absolute;
@@ -47,42 +46,58 @@ html {
     z-index: 0;
 }
 
-/* Текст — один раз, общий для всех стихов */
+/* текст стиха */
 .poem {
     padding: 40px;
     max-width: 600px;
     font-size: 26px;
     text-align: left;
     line-height: 2.2;
-    background: transparent;
-
     position: relative;
     z-index: 1;
 }
 
-/* Секция левого стиха */
+/* левый стих */
 .left-poem {
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding-left: 60px;
+    justify-content: flex-start;
 }
 
 .left-text {
     margin-top: 80px;
 }
 
-.center-text {
-    transform: translateY(40px);
+/* центр стих */
+.center-poem {
+    justify-content: center;
+    align-items: center;
+}
+
+/* описание между стихами */
+.description-wrapper {
+    padding: 120px 20px 80px;
     text-align: center;
+}
+
+.description-text {
+    color: #fff;
+    font-size: 22px;
+    max-width: 700px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
-.right-text {
-    transform: translateY(60px);
-    text-align: right;
-    margin-left: auto;
+/* фон для второго стиха */
+.center-poem .poem {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
 }
 
+/* отступ между блоками */
+.spacer {
+    height: 120px;
+}
+
+/* анимация */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -93,47 +108,6 @@ html {
         filter: brightness(1);
     }
 }
-
-.big-gap {
-    height: 800px;
-}
-
-.description-text {
-    color: #fff;
-    font-size: 22px;
-    text-align: center;
-    max-width: 700px;
-    margin: 200px auto 80px auto;
-    padding: 80px 20px 20px 20px; 
-    line-height: 1.6;
-}
-
-.poem-section.center-poem {
-    align-items: center;
-    margin-top: 360px;
-}
-
-.center-poem .poem {
-    background: rgba(0, 0, 0, 0.55);
-    padding: 40px;
-    border-radius: 10px;
-    margin-top: 100px;
-}
-
-.description-text {
-    margin: 250px auto 80px auto;
-}
-
-.poem-block {
-    margin-bottom: 100px; /* расстояние между стихами */
-}
-
-.description-text {
-    margin-top: 40px; /* расстояние между стихом и текстом */
-    margin-left: auto;
-    margin-right: auto;
-}
-
 </style>
 
 </head>
@@ -145,41 +119,41 @@ html {
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-
 <script>
 window.addEventListener('load', () => {
     document.body.style.animation = "fadeIn 3s ease forwards";
 });
 </script>
 
-<!-- 🌑 СТИХ 1 (левый) -->
+<!-- 🌑 СТИХ 1 -->
 <section class="poem-section left-poem" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
     
-    <div>
-        <div class="poem left-text big-poem" style="color: black;">
-            <p>
-            Я очень люблю жить<br>
-            И ненавижу жизнь<br>
-            Исчезнуть<br>
-            Или забыть?<br>
-            Я не хочу быть…
-            </p>
-        </div>
+    <div class="poem left-text" style="color: black;">
+        <p>
+        Я очень люблю жить<br>
+        И ненавижу жизнь<br>
+        Исчезнуть<br>
+        Или забыть?<br>
+        Я не хочу быть…
+        </p>
     </div>
 
 </section>
-</section>
 
-<div class="description-text">
-    этот стих описывает моё состояние точнее, чем я сама могу о нём сказать.
-    <br>
-    и… стих не мой, я очень хочу найти автора!👇
+<!-- 🌑 ОПИСАНИЕ (между стихами) -->
+<div class="description-wrapper">
+    <div class="description-text">
+        этот стих описывает моё состояние точнее, чем я сама могу о нём сказать.
+        <br><br>
+        и… стих не мой, я очень хочу найти автора!👇
+    </div>
 </div>
 
-<section class="poem-section center-poem" ...>
+<div class="spacer"></div>
 
-<!-- 🌑 СТИХ 2 (фон фото) -->
+<!-- 🌑 СТИХ 2 -->
 <section class="poem-section center-poem" style="background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp5772578.jpg?ssl=1');">
+    
     <div class="poem" style="color: white;">
         <p>
         как я сделалась тем, от чего меня воротило<br>
@@ -198,9 +172,8 @@ window.addEventListener('load', () => {
         дальнейшее направление.
         </p>
     </div>
-</section>
 
-<div class="big-gap"></div>
+</section>
 
 </body>
 </html>
