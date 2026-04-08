@@ -17,7 +17,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Блок со стихом */
+/* Блок стиха */
 .poem-section {
     min-height: 100vh;
     background-size: cover;
@@ -31,7 +31,7 @@ html {
     scroll-snap-align: start;
 }
 
-/* градиент */
+/* затемнение фона */
 .poem-section::before {
     content: "";
     position: absolute;
@@ -51,17 +51,12 @@ html {
     padding: 40px;
     max-width: 600px;
     font-size: 26px;
-    text-align: left;
     line-height: 2.2;
     position: relative;
     z-index: 1;
 }
 
 /* левый стих */
-.left-poem {
-    justify-content: flex-start;
-}
-
 .left-text {
     margin-top: 80px;
 }
@@ -72,9 +67,14 @@ html {
     align-items: center;
 }
 
+.center-poem .poem {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+}
+
 /* описание между стихами */
 .description-wrapper {
-    padding: 120px 20px 80px;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -84,17 +84,6 @@ html {
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
-}
-
-/* фон для второго стиха */
-.center-poem .poem {
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 10px;
-}
-
-/* отступ между блоками */
-.spacer {
-    height: 120px;
 }
 
 /* анимация */
@@ -126,7 +115,7 @@ window.addEventListener('load', () => {
 </script>
 
 <!-- 🌑 СТИХ 1 -->
-<section class="poem-section left-poem" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
+<section class="poem-section" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
     
     <div class="poem left-text" style="color: black;">
         <p>
@@ -140,7 +129,7 @@ window.addEventListener('load', () => {
 
 </section>
 
-<!-- 🌑 ОПИСАНИЕ (между стихами) -->
+<!-- 🌑 ОПИСАНИЕ -->
 <div class="description-wrapper">
     <div class="description-text">
         этот стих описывает моё состояние точнее, чем я сама могу о нём сказать.
@@ -148,8 +137,6 @@ window.addEventListener('load', () => {
         и… стих не мой, я очень хочу найти автора!👇
     </div>
 </div>
-
-<div class="spacer"></div>
 
 <!-- 🌑 СТИХ 2 -->
 <section class="poem-section center-poem" style="background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp5772578.jpg?ssl=1');">
