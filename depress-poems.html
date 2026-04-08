@@ -9,46 +9,31 @@ body {
     margin: 0;
     background: black;
     font-family: 'EB Garamond', serif;
-    scroll-snap-type: y mandatory;
-    opacity: 0;
+    color: white;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* Блок стиха */
+/* Секция стиха */
 .poem-section {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 60px;
-    padding-top: 60px;
+    align-items: center;
+    padding: 60px;
     position: relative;
-    scroll-snap-align: start;
 }
 
-/* затемнение фона */
+/* затемнение */
 .poem-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.9) 0%,
-        rgba(0,0,0,0.3) 30%,
-        rgba(0,0,0,0.3) 70%,
-        rgba(0,0,0,0.9) 100%
-    );
+    background: rgba(0,0,0,0.6);
     z-index: 0;
 }
 
 /* текст стиха */
 .poem {
-    padding: 40px;
     max-width: 600px;
     font-size: 26px;
     line-height: 2.2;
@@ -56,46 +41,27 @@ html {
     z-index: 1;
 }
 
-/* левый стих */
-.left-text {
-    margin-top: 80px;
+/* первый стих слева */
+.left {
+    justify-content: flex-start;
 }
 
-/* центр стих */
-.center-poem {
+/* второй стих по центру */
+.center {
     justify-content: center;
-    align-items: center;
-}
-
-.center-poem .poem {
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 10px;
 }
 
 /* описание между стихами */
 .description-wrapper {
-    padding: 40px 20px;
+    padding: 120px 20px;
     text-align: center;
 }
 
 .description-text {
-    color: #fff;
-    font-size: 22px;
     max-width: 700px;
     margin: 0 auto;
+    font-size: 22px;
     line-height: 1.6;
-}
-
-/* анимация */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        filter: brightness(0);
-    }
-    to {
-        opacity: 1;
-        filter: brightness(1);
-    }
 }
 </style>
 
@@ -108,16 +74,9 @@ html {
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-window.addEventListener('load', () => {
-    document.body.style.animation = "fadeIn 3s ease forwards";
-});
-</script>
-
 <!-- 🌑 СТИХ 1 -->
-<section class="poem-section" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
-    
-    <div class="poem left-text" style="color: black;">
+<section class="poem-section left" style="background-image: url('https://cdn.fishki.net/upload/post/2019/10/22/3120072/n7plux7fhrt31.jpg');">
+    <div class="poem" style="color: black;">
         <p>
         Я очень люблю жить<br>
         И ненавижу жизнь<br>
@@ -126,7 +85,6 @@ window.addEventListener('load', () => {
         Я не хочу быть…
         </p>
     </div>
-
 </section>
 
 <!-- 🌑 ОПИСАНИЕ -->
@@ -139,9 +97,8 @@ window.addEventListener('load', () => {
 </div>
 
 <!-- 🌑 СТИХ 2 -->
-<section class="poem-section center-poem" style="background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp5772578.jpg?ssl=1');">
-    
-    <div class="poem" style="color: white;">
+<section class="poem-section center" style="background-image: url('https://i0.wp.com/wallpapercave.com/wp/wp5772578.jpg?ssl=1');">
+    <div class="poem">
         <p>
         как я сделалась тем, от чего меня воротило<br>
         какими ветрами меня вообще сюда занесло<br>
@@ -159,7 +116,6 @@ window.addEventListener('load', () => {
         дальнейшее направление.
         </p>
     </div>
-
 </section>
 
 </body>
